@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://csas2tkv8eilv"]
+
+[ext_resource type="PackedScene" uid="uid://ccr5e5uyv41b8" path="res://office.blend" id="1_1n20u"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_s2gpp"]
+
+[sub_resource type="Sky" id="Sky_s6cxj"]
+sky_material = SubResource("ProceduralSkyMaterial_s2gpp")
+
+[sub_resource type="Environment" id="Environment_of0pe"]
+background_mode = 2
+sky = SubResource("Sky_s6cxj")
+
+[node name="Node3D" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.30637, 0)
+
+[node name="office" parent="." instance=ExtResource("1_1n20u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.74622, -5.96046e-08, -0.11701)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_of0pe")

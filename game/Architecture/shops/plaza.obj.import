@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://blt6f130n4mfb"
+path="res://.godot/imported/plaza.obj-aacaa3df72ff8019decc5c279db34e68.mesh"
+
+[deps]
+
+files=["res://.godot/imported/plaza.obj-aacaa3df72ff8019decc5c279db34e68.mesh"]
+
+source_file="res://Architecture/shops/plaza.obj"
+dest_files=["res://.godot/imported/plaza.obj-aacaa3df72ff8019decc5c279db34e68.mesh", "res://.godot/imported/plaza.obj-aacaa3df72ff8019decc5c279db34e68.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

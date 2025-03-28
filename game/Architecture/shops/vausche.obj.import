@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://imrk8as63dsa"
+path="res://.godot/imported/vausche.obj-ad7cb1115bcd91fd354bfb3dd7d096ea.mesh"
+
+[deps]
+
+files=["res://.godot/imported/vausche.obj-ad7cb1115bcd91fd354bfb3dd7d096ea.mesh"]
+
+source_file="res://Architecture/shops/vausche.obj"
+dest_files=["res://.godot/imported/vausche.obj-ad7cb1115bcd91fd354bfb3dd7d096ea.mesh", "res://.godot/imported/vausche.obj-ad7cb1115bcd91fd354bfb3dd7d096ea.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

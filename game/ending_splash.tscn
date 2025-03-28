@@ -1,0 +1,57 @@
+[gd_scene load_steps=5 format=3 uid="uid://cky2vemxkl4hx"]
+
+[ext_resource type="Theme" uid="uid://df5cuabwtpqnk" path="res://game.tres" id="1_6m7o4"]
+[ext_resource type="Script" path="res://Button.gd" id="2_fy5wp"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_j41xm"]
+font_size = 120
+
+[sub_resource type="LabelSettings" id="LabelSettings_oio6p"]
+font_size = 60
+
+[node name="CanvasLayer" type="CanvasLayer"]
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 1752.0
+offset_top = -113.0
+offset_right = 3065.0
+offset_bottom = 797.0
+
+[node name="Button" type="Button" parent="Control"]
+layout_mode = 2
+offset_left = -1461.0
+offset_top = 606.0
+offset_right = -743.0
+offset_bottom = 800.0
+rotation = -0.00126563
+theme = ExtResource("1_6m7o4")
+text = "Ok, copy that"
+script = ExtResource("2_fy5wp")
+
+[node name="Label" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = -1535.0
+offset_top = 337.0
+offset_right = -683.0
+offset_bottom = 564.0
+rotation = 0.000185204
+theme = ExtResource("1_6m7o4")
+text = "Collect all the orbs"
+label_settings = SubResource("LabelSettings_j41xm")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = -1536.0
+offset_top = 222.0
+offset_right = -684.0
+offset_bottom = 449.0
+rotation = 0.000185204
+theme = ExtResource("1_6m7o4")
+text = "Your Mission"
+label_settings = SubResource("LabelSettings_oio6p")
+horizontal_alignment = 1
+vertical_alignment = 1

@@ -1,0 +1,65 @@
+[gd_scene load_steps=7 format=3 uid="uid://c6rko3mfrnam5"]
+
+[ext_resource type="Script" path="res://Task.gd" id="1_gyhqq"]
+[ext_resource type="PackedScene" uid="uid://dm7uctcutikqf" path="res://Items/file.blend" id="2_6vl1k"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_7knqw"]
+
+[sub_resource type="Animation" id="Animation_7khco"]
+resource_name = "Pulse"
+length = 4.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("file:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2, 4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(1, 1, 1), Vector3(1.61, 1.61, 1.61), Vector3(1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_urkki"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("file:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1.61, 1.61, 1.61)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_fk053"]
+_data = {
+"Pulse": SubResource("Animation_7khco"),
+"RESET": SubResource("Animation_urkki")
+}
+
+[node name="Task" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.5205, 0.127418, -1.49166)
+script = ExtResource("1_gyhqq")
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.528676, 0)
+shape = SubResource("SphereShape3D_7knqw")
+
+[node name="file" parent="." instance=ExtResource("2_6vl1k")]
+transform = Transform3D(1.61, 0, 0, 0, 1.61, 0, 0, 0, 1.61, 0, 0, 0)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "Pulse"
+libraries = {
+"": SubResource("AnimationLibrary_fk053")
+}
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]

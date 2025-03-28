@@ -1,0 +1,43 @@
+[gd_scene load_steps=4 format=3 uid="uid://c07w3qieskau"]
+
+[ext_resource type="Theme" uid="uid://df5cuabwtpqnk" path="res://game.tres" id="1_abprw"]
+[ext_resource type="Script" path="res://Button.gd" id="2_lsqx1"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_j41xm"]
+font_size = 120
+
+[node name="CanvasLayer" type="CanvasLayer"]
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 1752.0
+offset_top = -113.0
+offset_right = 3065.0
+offset_bottom = 797.0
+
+[node name="Button" type="Button" parent="Control"]
+layout_mode = 2
+offset_left = -1461.0
+offset_top = 511.0
+offset_right = -743.0
+offset_bottom = 705.0
+rotation = -0.00126563
+theme = ExtResource("1_abprw")
+text = "Play again"
+script = ExtResource("2_lsqx1")
+
+[node name="Label" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = -1387.0
+offset_top = 238.0
+offset_right = -817.0
+offset_bottom = 465.0
+rotation = 0.000185204
+theme = ExtResource("1_abprw")
+text = "You Won!"
+label_settings = SubResource("LabelSettings_j41xm")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="Control/Button" to="Control/Button" method="_on_pressed"]

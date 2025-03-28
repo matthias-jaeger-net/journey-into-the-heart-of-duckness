@@ -1,0 +1,19 @@
+# macOS system files
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# macOS Finder settings
+*.swp
+.Spotlight-V100
+.Trashes
+
+# macOS metadata
+._*
+
+# Ignore local configuration files
+*.local
+*.env
+
+# Logs
+*.log

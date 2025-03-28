@@ -1,0 +1,63 @@
+[gd_scene load_steps=5 format=3 uid="uid://qv03iciyhl3b"]
+
+[ext_resource type="Theme" uid="uid://df5cuabwtpqnk" path="res://game.tres" id="1_grlgp"]
+[ext_resource type="Script" path="res://Button.gd" id="2_70ohd"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4et1x"]
+bg_color = Color(0.290196, 0.0470588, 0.686275, 1)
+
+[sub_resource type="GDScript" id="GDScript_yfr3q"]
+script/source = "extends Button
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	pass
+
+
+
+func _on_pressed():
+	get_tree().quit()
+
+"
+
+[node name="Node3D" type="Node3D"]
+
+[node name="Control2" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 895.0
+offset_bottom = 910.0
+
+[node name="Button" type="Button" parent="Control2"]
+layout_mode = 2
+offset_left = 189.0
+offset_top = 232.0
+offset_right = 762.0
+offset_bottom = 407.0
+rotation = 0.0791226
+theme = ExtResource("1_grlgp")
+theme_override_styles/normal = SubResource("StyleBoxFlat_4et1x")
+text = "PLAY AGAIN?"
+script = ExtResource("2_70ohd")
+
+[node name="Button2" type="Button" parent="Control2"]
+layout_mode = 2
+offset_left = 356.0
+offset_top = 556.0
+offset_right = 566.0
+offset_bottom = 676.0
+rotation = -0.169072
+theme = ExtResource("1_grlgp")
+text = "QUIT"
+script = SubResource("GDScript_yfr3q")
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+
+[connection signal="pressed" from="Control2/Button" to="Control2/Button" method="_on_pressed"]
+[connection signal="pressed" from="Control2/Button2" to="Control2/Button2" method="_on_pressed"]
