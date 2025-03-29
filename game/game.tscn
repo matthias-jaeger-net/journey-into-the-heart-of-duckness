@@ -1,17 +1,10 @@
-[gd_scene load_steps=16 format=3 uid="uid://w30r1j3w8yjv"]
+[gd_scene load_steps=9 format=3 uid="uid://w30r1j3w8yjv"]
 
 [ext_resource type="Script" path="res://game.gd" id="1_h3r1s"]
 [ext_resource type="PackedScene" uid="uid://bwn04crc8k7jb" path="res://scenes/character_controller.tscn" id="2_ir2qa"]
 [ext_resource type="AudioStream" uid="uid://cbt5x7rbpibfi" path="res://Sounds/Atmos/2.mp3" id="5_vrgsg"]
-[ext_resource type="PackedScene" uid="uid://dnd6js1ye6vwx" path="res://world_environment.tscn" id="9_1qptw"]
-[ext_resource type="PackedScene" uid="uid://d0a0gguc51vpn" path="res://Architecture/shops/cleaner-city.blend" id="9_w6vtg"]
-[ext_resource type="PackedScene" uid="uid://cgxqqqyky7yg6" path="res://Architecture/shops/Shopstreet.blend" id="10_mr6au"]
-[ext_resource type="PackedScene" uid="uid://dnplmlg7e5nxx" path="res://Architecture/shops/Barstreet.blend" id="11_fnjn6"]
 [ext_resource type="Script" path="res://cookie.gd" id="11_km61u"]
-[ext_resource type="PackedScene" uid="uid://i4y3fotw2wuk" path="res://quest_giver.tscn" id="12_83a6a"]
-[ext_resource type="PackedScene" uid="uid://cpvob5k2t7eu3" path="res://Architecture/shops/vausesch.blend" id="12_j1m6a"]
 [ext_resource type="PackedScene" uid="uid://dj8e6dnvkrjof" path="res://Items/cookie.blend" id="12_uj4jv"]
-[ext_resource type="PackedScene" uid="uid://b4u2l5je73ehs" path="res://Architecture/shops/housevou.blend" id="13_5kq4k"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_7knqw"]
 
@@ -48,6 +41,7 @@ stream = ExtResource("5_vrgsg")
 autoplay = true
 
 [node name="Node3D" type="Node3D" parent="."]
+visible = false
 
 [node name="Cookie" type="Node3D" parent="Node3D"]
 unique_name_in_owner = true
@@ -125,25 +119,6 @@ autoplay = "Rotate"
 libraries = {
 "": SubResource("AnimationLibrary_60d2n")
 }
-
-[node name="cleaner-city" parent="." instance=ExtResource("9_w6vtg")]
-
-[node name="Shopstreet" parent="." instance=ExtResource("10_mr6au")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.0972, 2.08165e-12, -2.82253)
-
-[node name="Barstreet" parent="." instance=ExtResource("11_fnjn6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.553, 2.08165e-12, -7.095)
-
-[node name="QuestGiver" parent="." instance=ExtResource("12_83a6a")]
-transform = Transform3D(0.40562, -0.000705734, 0.914041, 0.000777152, 1, 0.000427226, -0.914041, 0.000537053, 0.40562, 32.8599, -0.0195028, -53.2639)
-
-[node name="vausesch" parent="." instance=ExtResource("12_j1m6a")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.09369, 0, -40.8993)
-
-[node name="housevou" parent="." instance=ExtResource("13_5kq4k")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 55.7152, -0.164858, -60.7409)
-
-[node name="WorldEnvironment0" parent="." instance=ExtResource("9_1qptw")]
 
 [connection signal="_player_picked_up_cookie" from="Node3D/Cookie" to="." method="_on_cookie__player_picked_up_cookie"]
 [connection signal="body_entered" from="Node3D/Cookie/Area3D" to="Node3D/Cookie" method="_on_area_3d_body_entered" flags=18]
