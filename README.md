@@ -1,5 +1,8 @@
-# journey-into-the-heart-of-duckness
+# Journey into the heart of duckness
 A 3rd person game prototype by Matthias Jäger
+
+![](Cover.png "Title")
+
 
 # Todos 
 - [x] Clean up screne tree
