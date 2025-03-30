@@ -1,9 +1,10 @@
-[gd_scene load_steps=11 format=3 uid="uid://w30r1j3w8yjv"]
+[gd_scene load_steps=12 format=3 uid="uid://w30r1j3w8yjv"]
 
 [ext_resource type="Script" path="res://game.gd" id="1_h3r1s"]
 [ext_resource type="PackedScene" uid="uid://bwn04crc8k7jb" path="res://scenes/character_controller.tscn" id="2_ir2qa"]
 [ext_resource type="AudioStream" uid="uid://cbt5x7rbpibfi" path="res://Sounds/Atmos/2.mp3" id="5_vrgsg"]
 [ext_resource type="PackedScene" uid="uid://chkctopwet48o" path="res://scenes/base/base.blend" id="6_152e8"]
+[ext_resource type="AudioStream" uid="uid://b3s1alg658geh" path="res://Sounds/pickupCoin.wav" id="8_cxhwn"]
 [ext_resource type="PackedScene" uid="uid://dnd6js1ye6vwx" path="res://world_environment.tscn" id="9_1qptw"]
 [ext_resource type="Script" path="res://cookie.gd" id="11_km61u"]
 [ext_resource type="PackedScene" uid="uid://dj8e6dnvkrjof" path="res://Items/cookie.blend" id="12_uj4jv"]
@@ -43,96 +44,47 @@ transform = Transform3D(-0.0578254, -3.28035e-16, -0.998327, 3.48787e-16, 1, -3.
 stream = ExtResource("5_vrgsg")
 autoplay = true
 
-[node name="Node3D" type="Node3D" parent="."]
-visible = false
-
-[node name="Cookie" type="Node3D" parent="Node3D"]
-unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 1, 1.12238e-23, 0, 1.12238e-23, 1, -5.65551, 0.407428, 11.3009)
-script = ExtResource("11_km61u")
-
-[node name="Area3D" type="Area3D" parent="Node3D/Cookie"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/Cookie/Area3D"]
-shape = SubResource("SphereShape3D_7knqw")
-
-[node name="cookie" parent="Node3D/Cookie" instance=ExtResource("12_uj4jv")]
-transform = Transform3D(0.633726, 6.86518e-18, 0.773558, 4.9096e-17, 1, -4.9096e-17, -0.773558, 6.90921e-17, 0.633726, 0, 0, 0)
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Node3D/Cookie"]
-root_node = NodePath("../cookie")
-autoplay = "Rotate"
-libraries = {
-"": SubResource("AnimationLibrary_60d2n")
-}
-
-[node name="Cookie2" type="Node3D" parent="Node3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 1.12238e-23, 0, 1.12238e-23, 1, -0.973988, 0.433117, -2.22269)
-script = ExtResource("11_km61u")
-
-[node name="Area3D" type="Area3D" parent="Node3D/Cookie2"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/Cookie2/Area3D"]
-shape = SubResource("SphereShape3D_7knqw")
-
-[node name="cookie" parent="Node3D/Cookie2" instance=ExtResource("12_uj4jv")]
-transform = Transform3D(0.633726, 6.86518e-18, 0.773558, 4.9096e-17, 1, -4.9096e-17, -0.773558, 6.90921e-17, 0.633726, 0, 0, 0)
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Node3D/Cookie2"]
-root_node = NodePath("../cookie")
-autoplay = "Rotate"
-libraries = {
-"": SubResource("AnimationLibrary_60d2n")
-}
-
-[node name="Cookie3" type="Node3D" parent="Node3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 1.12238e-23, 0, 1.12238e-23, 1, 8.76982, 5.18643, -102.107)
-script = ExtResource("11_km61u")
-
-[node name="Area3D" type="Area3D" parent="Node3D/Cookie3"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/Cookie3/Area3D"]
-shape = SubResource("SphereShape3D_7knqw")
-
-[node name="cookie" parent="Node3D/Cookie3" instance=ExtResource("12_uj4jv")]
-transform = Transform3D(0.633726, 6.86518e-18, 0.773558, 4.9096e-17, 1, -4.9096e-17, -0.773558, 6.90921e-17, 0.633726, 0, 0, 0)
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Node3D/Cookie3"]
-root_node = NodePath("../cookie")
-autoplay = "Rotate"
-libraries = {
-"": SubResource("AnimationLibrary_60d2n")
-}
-
-[node name="Cookie4" type="Node3D" parent="Node3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 1.12238e-23, 0, 1.12238e-23, 1, 69.4656, 1.34169, -57.8235)
-script = ExtResource("11_km61u")
-
-[node name="Area3D" type="Area3D" parent="Node3D/Cookie4"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/Cookie4/Area3D"]
-shape = SubResource("SphereShape3D_7knqw")
-
-[node name="cookie" parent="Node3D/Cookie4" instance=ExtResource("12_uj4jv")]
-transform = Transform3D(0.633726, 6.86518e-18, 0.773558, 4.9096e-17, 1, -4.9096e-17, -0.773558, 6.90921e-17, 0.633726, 0, 0, 0)
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Node3D/Cookie4"]
-root_node = NodePath("../cookie")
-autoplay = "Rotate"
-libraries = {
-"": SubResource("AnimationLibrary_60d2n")
-}
-
 [node name="base" parent="." instance=ExtResource("6_152e8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 2.08165e-12, 2.08165e-12)
 
 [node name="WorldEnvironment0" parent="." instance=ExtResource("9_1qptw")]
 
-[connection signal="_player_picked_up_cookie" from="Node3D/Cookie" to="." method="_on_cookie__player_picked_up_cookie"]
-[connection signal="body_entered" from="Node3D/Cookie/Area3D" to="Node3D/Cookie" method="_on_area_3d_body_entered" flags=18]
-[connection signal="_player_picked_up_cookie" from="Node3D/Cookie2" to="." method="_on_cookie__player_picked_up_cookie"]
-[connection signal="body_entered" from="Node3D/Cookie2/Area3D" to="Node3D/Cookie2" method="_on_area_3d_body_entered" flags=18]
-[connection signal="_player_picked_up_cookie" from="Node3D/Cookie3" to="." method="_on_cookie__player_picked_up_cookie"]
-[connection signal="body_entered" from="Node3D/Cookie3/Area3D" to="Node3D/Cookie3" method="_on_area_3d_body_entered" flags=18]
-[connection signal="_player_picked_up_cookie" from="Node3D/Cookie4" to="." method="_on_cookie__player_picked_up_cookie"]
-[connection signal="body_entered" from="Node3D/Cookie4/Area3D" to="Node3D/Cookie4" method="_on_area_3d_body_entered" flags=18]
+[node name="PickupSystem" type="Node3D" parent="."]
+
+[node name="Cookie" type="Node3D" parent="PickupSystem"]
+transform = Transform3D(1, 0, 0, 0, 1, 1.12238e-23, 0, 1.12238e-23, 1, 2.08165e-12, 2.08165e-12, 2.08165e-12)
+script = ExtResource("11_km61u")
+
+[node name="Area3D" type="Area3D" parent="PickupSystem/Cookie"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PickupSystem/Cookie/Area3D"]
+shape = SubResource("SphereShape3D_7knqw")
+
+[node name="cookie" parent="PickupSystem/Cookie" instance=ExtResource("12_uj4jv")]
+transform = Transform3D(0.633726, 6.86518e-18, 0.773558, 4.9096e-17, 1, -4.9096e-17, -0.773558, 6.90921e-17, 0.633726, 0, 0, 0)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="PickupSystem/Cookie"]
+root_node = NodePath("../cookie")
+autoplay = "Rotate"
+libraries = {
+"": SubResource("AnimationLibrary_60d2n")
+}
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="PickupSystem/Cookie"]
+unique_name_in_owner = true
+stream = ExtResource("8_cxhwn")
+
+[node name="SpanPoints" type="Node3D" parent="PickupSystem"]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.16329e-12, 4.16329e-12, 4.16329e-12)
+
+[node name="Node3D" type="Node3D" parent="PickupSystem/SpanPoints"]
+transform = Transform3D(-0.265169, -0.96419, -0.00489707, 0.964202, -0.265166, -0.00134676, 0, -0.00507889, 0.999987, -5.353, 1, 1)
+
+[node name="Node3D2" type="Node3D" parent="PickupSystem/SpanPoints"]
+transform = Transform3D(1, -3.48787e-16, 3.48787e-16, 3.48787e-16, 1, -3.48787e-16, -3.48787e-16, 3.48787e-16, 1, 2.087, 1, 1)
+
+[node name="Node3D3" type="Node3D" parent="PickupSystem/SpanPoints"]
+transform = Transform3D(1, -3.48787e-16, 3.48787e-16, 3.48787e-16, 1, -3.48787e-16, -3.48787e-16, 3.48787e-16, 1, 7.04, 1, 1)
+
+[connection signal="body_entered" from="PickupSystem/Cookie/Area3D" to="PickupSystem/Cookie" method="_on_area_3d_body_entered" flags=18]
