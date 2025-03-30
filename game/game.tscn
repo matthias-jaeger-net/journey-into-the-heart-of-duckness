@@ -1,8 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://w30r1j3w8yjv"]
+[gd_scene load_steps=11 format=3 uid="uid://w30r1j3w8yjv"]
 
 [ext_resource type="Script" path="res://game.gd" id="1_h3r1s"]
 [ext_resource type="PackedScene" uid="uid://bwn04crc8k7jb" path="res://scenes/character_controller.tscn" id="2_ir2qa"]
 [ext_resource type="AudioStream" uid="uid://cbt5x7rbpibfi" path="res://Sounds/Atmos/2.mp3" id="5_vrgsg"]
+[ext_resource type="PackedScene" uid="uid://chkctopwet48o" path="res://scenes/base/base.blend" id="6_152e8"]
+[ext_resource type="PackedScene" uid="uid://dnd6js1ye6vwx" path="res://world_environment.tscn" id="9_1qptw"]
 [ext_resource type="Script" path="res://cookie.gd" id="11_km61u"]
 [ext_resource type="PackedScene" uid="uid://dj8e6dnvkrjof" path="res://Items/cookie.blend" id="12_uj4jv"]
 
@@ -35,6 +37,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 2.08165e-12, 2.0
 script = ExtResource("1_h3r1s")
 
 [node name="CharacterController" parent="." instance=ExtResource("2_ir2qa")]
+transform = Transform3D(-0.0578254, -3.28035e-16, -0.998327, 3.48787e-16, 1, -3.48787e-16, 0.998327, -3.68372e-16, -0.0578254, 2.08165e-12, 1.69128, 1.31157)
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_vrgsg")
@@ -119,6 +122,11 @@ autoplay = "Rotate"
 libraries = {
 "": SubResource("AnimationLibrary_60d2n")
 }
+
+[node name="base" parent="." instance=ExtResource("6_152e8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 2.08165e-12, 2.08165e-12)
+
+[node name="WorldEnvironment0" parent="." instance=ExtResource("9_1qptw")]
 
 [connection signal="_player_picked_up_cookie" from="Node3D/Cookie" to="." method="_on_cookie__player_picked_up_cookie"]
 [connection signal="body_entered" from="Node3D/Cookie/Area3D" to="Node3D/Cookie" method="_on_area_3d_body_entered" flags=18]
